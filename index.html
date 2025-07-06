@@ -3,7 +3,33 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+        <title>An Awful Quiz App</title>
     </head>
-    <body></body>
+    <body>
+        <div class="question-box">
+            <div class="circle"><p>1</p></div>
+            <h1>Question goes here</h1>
+        </div>
+        <div class="btn-container">
+            <div class="answer-buttons">
+                <button class="answer-btn">
+                    Answer 1 <img src="circle.png" id="checkbox" alt="" />
+                </button>
+                <button class="answer-btn">
+                    Answer 2 <img src="circle.png" id="checkbox" alt="" />
+                </button>
+                <button class="answer-btn">
+                    Answer 3 <img src="correct.png" id="correct" alt="" />
+                </button>
+                <button class="answer-btn">
+                    Answer 4 <img src="incorrect.png" id="incorrect" alt="" />
+                </button>
+            </div>
+            <div class="next-button">
+                <button id="next-btn">Next</button>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
 </html>
