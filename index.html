@@ -9,25 +9,15 @@
     <body>
         <div class="question-box">
             <div class="circle"><p>1</p></div>
-            <h1>Question goes here</h1>
+            <h1 id="question">An Awful Quiz App</h1>
         </div>
         <div class="btn-container">
-            <div class="answer-buttons">
-                <button class="answer-btn">
-                    Answer 1 <img src="circle.png" id="checkbox" alt="" />
-                </button>
-                <button class="answer-btn">
-                    Answer 2 <img src="circle.png" id="checkbox" alt="" />
-                </button>
-                <button class="answer-btn">
-                    Answer 3 <img src="correct.png" id="correct" alt="" />
-                </button>
-                <button class="answer-btn">
-                    Answer 4 <img src="incorrect.png" id="incorrect" alt="" />
-                </button>
-            </div>
-            <div class="next-button">
+            <div class="answer-buttons"></div>
+            <div class="buttons">
+                <button id="start-btn">Start</button>
                 <button id="next-btn">Next</button>
+                <button id="submit-btn">Submit</button>
+                <button id="restart-btn">Restart</button>
             </div>
         </div>
         <script src="script.js"></script>
