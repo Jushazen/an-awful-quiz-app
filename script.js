@@ -35,12 +35,14 @@ const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
 const submitButton = document.getElementById("submit-btn");
 const restartButton = document.getElementById("restart-btn");
+const resultBox = document.querySelector(".results");
 
 let currentQuestionIndex = 0;
 let score = 0;
 function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
+    answerButtons.style.display = "flex";
     showQuestion();
 }
 
@@ -95,13 +97,31 @@ function resetState() {
     }
 }
 
-function showResults() {}
+function showResults() {
+    const oldCircle = questionBox.querySelector(".circle");
+    if (oldCircle) {
+        questionBox.removeChild(oldCircle);
+    }
+    questionText.innerHTML = "Quiz Complete!";
+    answerButtons.style.display = "none";
+    nextButton.style.display = "none";
+    resultBox.style.display = "flex";
+    let scoreDescription = document.createElement("h2");
+    scoreDescription.textContent = "Your total score is:";
+    let scoreText = document.createElement("h1");
+    scoreText.textContent = `${score}/${questions.length}`;
+    resultBox.appendChild(scoreDescription);
+    resultBox.appendChild(scoreText);
+    restartButton.style.display = "block";
+}
 
 startButton.addEventListener("click", () => {
     startQuiz();
 });
 
 restartButton.addEventListener("click", () => {
+    resultBox.innerHTML = "";
+    resultBox.style.display = "none";
     startQuiz();
 });
 
@@ -114,6 +134,8 @@ submitButton.addEventListener("click", () => {
                     button.classList.remove("focused");
                     checkbox.src = "incorrect.png";
                     checkbox.id = "incorrect";
+                } else {
+                    score++;
                 }
             }
         } else {
